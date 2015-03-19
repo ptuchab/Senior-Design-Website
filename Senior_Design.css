@@ -1,0 +1,57 @@
+#header {
+	height: 700px;
+	background-image: url("ipowr4_motor_view.png");
+}
+
+/*NavBar*/
+
+#nav {
+	position: static;
+	height: 50px;
+	padding: 15px;
+	width: 100%;
+	background-color: black;
+	z-index: 2;
+}
+
+#nav li {
+	padding: 30px;
+	border-right: 3px solid white;
+	display: inline;
+}
+
+#nav li a{
+	color: white;
+	text-decoration: none;
+}
+
+#nav li a:hover{
+	text-decoration: underline;
+}/*END Nav Bar*/
+
+/*
+CAD Slider
+*/
+
+.slide-viewer {
+	position: relative;
+	overflow: hidden;
+	height: 300px;
+}
+
+.slide-group {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.slide {
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+}
+
+.slide:first-child{
+	display: block;
+} /*END CAD Slide Viewer*/
