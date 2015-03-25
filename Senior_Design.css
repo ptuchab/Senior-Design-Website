@@ -1,8 +1,10 @@
 body {
 	width: 100%;
 	margin: 0 auto;
+	background-color: rgb(196, 216, 226);
 }
 #header {
+	top: 0px;
 	height: 700px;
 	background-image: url("ipowr4_motor_view.png");
 }
@@ -11,11 +13,11 @@ body {
 NavBar
 */
 #nav {
-	width: 96%;
+	width: 97%;
 	position: static;
 	height: 50px;
 	padding: 15px;
-	background-color: black;
+	background-color: #63D1F4;
 	z-index: 2;
 }
 
