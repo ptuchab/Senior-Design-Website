@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 	//CAD Slide Viewer
 
-	$('.slider').each(function(){					//For every slider
+	$('.slideshow-wrapper').each(function(){					//For every slider
 		var $this 	= $(this);						//Get the current slider
 		var $group 	= $this.find('.slide-group');	//Get the slide-group container
 		var $slides = $this.find('.slide');			//jQuery object to hold the nav butons
@@ -86,13 +86,13 @@ $(document).ready(function() {
 
 		$.each($slides, function(index){
 			//Create a button element for the button
-			var $button = $('<button type="button" class="slide-btn">&bull;</button>');
+			var $button = $('<button type="button" class="tiny">&bull;</button>');
 			if (index === currentIndex) {			//If index is the current item
 				$button.addClass('active');			//Add the active class
 			}
 			$button.on('click', function(){			//Create event handler for the button
 				move(index);						//It calls the move() function
-			}).appendTo('.slide-buttons');			//Add to the buttons holder
+			}).appendTo('.button-group');			//Add to the buttons holder
 			buttonArray.push($button);				//Add it to the button array
 		});
 
