@@ -27,12 +27,13 @@
 		<div id='page'>
 		<div class='top-bar' id='nav'>
 			<ul class='top-bar-section'>
+				<li><a href="#header">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#team">Team</a></li>
 				<li><a href="#literature">Literature</a></li>
 				<li><a href="#analysis">Analysis</a></li>
-				<li><a href="#CAD">CAD</a></li>
-				<li><a href="#manufacturing">Manufacturing</a></li>
+				<li><a href="#design">Design</a></li>
+				<li><a href="#manufacturing">Control System</a></li>
 				<li><a href="#references">References</a></li>
 			</ul>
 		</div>
@@ -41,7 +42,7 @@
 			<h3 id='about'>About</h3>
 			<div class='panel'>
 				<p>
-					The goal of our project is to build a ballbot, a robot capable of balancing on top of a ball.  This is similiar to the <a href="https://www.youtube.com/watch?v=WeM3iQc6pxk"> inverted pendulum on a cart problem</a>, where one attempts to balance a rod by moving a cart back and forth underneath it.  However, while an inverted pendulum on a cart is restricted to a single plane, a robot on top of a ball is capable of falling in 2 planes.  The first ballbot we are aware of was built at Carnegie Mellon University, <i><a href="https://www.ri.cmu.edu/pub_files/pub4/lauwers_tom_2006_1/lauwers_tom_2006_1.pdf"> A Dynamically Stable Single-Wheeled Mobile Robot with Inverse Mouse-Ball Drive </a></i>.  The planar dynamic model that was used in this paper has been adopted by every other ballbot that we have come across, and as a result is very similar to the dynamic model that we used when designing our ballbot.
+					The goal of our project is to build a ballbot, a robot capable of balancing on top of a ball.  This is similiar to the <a href="https://www.youtube.com/watch?v=WeM3iQc6pxk"> inverted pendulum on a cart problem</a>, where one attempts to balance a rod by moving a cart back and forth underneath it.  However, while an inverted pendulum on a cart is restricted to a single plane, a robot on top of a ball is capable of falling in 2 planes.  A ballbot, similiar to an inverted pendulum, is a dynamically unstable system.  In the case of the inverted pendulum on a cart problem, you have 2 degrees of freedom but you only have control over one degree of freedom.  The system is underconstrained and is thus always in a state of instability.  For a ballbot you have 5 degrees of freedom, and at most you have the ability to control 3 of those degrees of freedom.  The first ballbot we are aware of was built at Carnegie Mellon University, <i><a href="https://www.ri.cmu.edu/pub_files/pub4/lauwers_tom_2006_1/lauwers_tom_2006_1.pdf"> A Dynamically Stable Single-Wheeled Mobile Robot with Inverse Mouse-Ball Drive </a></i>.  The planar dynamic model that was used in this paper has been adopted by every other ballbot that we have come across, and as a result, a variation of this model was used for our dynamic model.
 				</P>
 			</div>
 		</div>
@@ -92,7 +93,7 @@
 					<div class='large-6 columns'>
 						<div class='panel'>
 							<p>
-								The video on the right is a ballbot that was made out of Lego Mindstorms.  Unlike the ballbot above which has the ability to rotate about its yaw axis, the wheels on this ballbot are orientated in such a way that it can only balance in the xz and yz planes, but not rotate about the yaw axis.  We decided to go with a wheel orientation similiar to this.  By removing one degree of freedom from the ballbot, the control system becomes much easier to develope and do to the limited time frame of our project we thought that this might be the best approach.
+								The video on the right is a ballbot that was made out of Lego Mindstorms.  Unlike the ballbot above which has the ability to rotate about its yaw axis, the wheels on this ballbot are orientated in such a way that it can only balance in the xz and yz planes, but not rotate about the yaw axis.  We decided to go with a wheel orientation similiar to this.  By removing one degree of freedom from the ballbot, the control system becomes much easier to develop, and do to the limited timeframe of our project we thought that this might be the best approach.
 							</p>
 						</div>
 					</div>
@@ -112,27 +113,34 @@
 		</div>
 
 		<div class='row'>
-			<h3 id="CAD">CAD</h3>
+			<h3 id="design">Design</h3>
 
 			<h4> Engineering Drawings </h4>
 <!---                                  Slider for CAD images                                 -->
-			<div class="slideshow-wrapper">
-				<div class="slide-viewer">
-					<div class="slide-group">
-						<ul>
-						<li class="slide slide 1"><img src="Drawings/3_8th_in_Bearing.png" /></li>
-						<li class="slide slide-2"><img src="Drawings/8-32_1in_SHCS.png" /></li>
-						<li class="slide slide-3"><img src="Drawings/1_half_in_Bearing.png" /></li>
-					</ul>
+			<div class='row push-2'>
+				<div class="slideshow-wrapper">
+					<div class="slide-viewer">
+						<div class="slide-group">
+							<ul>
+							<li class="slide slide 1"><img src="Drawings/3_8th_in_Bearing.png" /></li>
+							<li class="slide slide-2"><img src="Drawings/8-32_1in_SHCS.png" /></li>
+							<li class="slide slide-3"><img src="Drawings/1_half_in_Bearing.png" /></li>
+							<li class="slide slide-4"><img src="Drawings/Omniwheel_Assembly.png" /></li>
+						</ul>
+						</div>
 					</div>
+					<div class="button-group"><div class="round"></div></div>
 				</div>
-				<div class="button-group"><div class="round"></div></div>
 			</div>
 <!---                               End Slider for CAD images                                -->
 		</div>
 
 		<div class='row'>
-			<h3 id="manufacturing">Manufacturing</h3>
+			<h3 id="manufacturing">Control System</h3>
+			<div class='large-12 columns panel'>
+				<p>
+				</p>
+			</div>
 		</div>
 
 		<div class='row'>
@@ -157,12 +165,13 @@
 		</div>
 		<div class='large-4 medium-4 columns'>
 			<ul>
+				<li><a href="#header">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#team">Team</a></li>
 				<li><a href="#literature">Literature</a></li>
 				<li><a href="#analysis">Analysis</a></li>
-				<li><a href="#CAD">CAD</a></li>
-				<li><a href="#manufacturing">Manufacturing</a></li>
+				<li><a href="#design">Design</a></li>
+				<li><a href="#manufacturing">Control System</a></li>
 				<li><a href="#references">References</a></li>
 			</ul>
 		</div>
