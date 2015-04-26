@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> I.P.O.W.R.</title>
+		<title> IPOWR</title>
 		<link href="css/foundation.css" type="text/css" rel="stylesheet" />
 		<link href="Senior_Design.css" type="text/css" rel="stylesheet" />
 
@@ -20,8 +20,6 @@
 	</head>
 	<body>
 		<div id='header'>
-			<h1>I.P.O.W.R.</h1>
-			<h2>Inverted Pendulum OmniWheel Robot</h2>
 		</div>
 
 		<div id='page'>
@@ -33,7 +31,7 @@
 				<li><a href="#literature">Literature</a></li>
 				<li><a href="#analysis">Analysis</a></li>
 				<li><a href="#design">Design</a></li>
-				<li><a href="#manufacturing">Control System</a></li>
+				<li class='hide'><a href="#manufacturing">Control System</a></li>
 				<li><a href="#references">References</a></li>
 			</ul>
 		</div>
@@ -49,28 +47,40 @@
 
 		<div class='row'>
 			<h3 id="team">Team</h3>
-			<div class='large-6 medium-6 columns'>
+			<div class='large-5 medium-5 small-5 columns'>
 				<div class='panel'>
 					<h4>Bryan Ptucha</h4>
 					<h6>Department of Mechanical Engineering</h6>
+					<div class='push-3'>
+						<img src="Pictures/Bryan.png"/>
+					</div>
 				</div>
 			</div>
-			<div class='large-6 medium-6 columns'>
+			<div class='large-5 medium-5 small-5 push-2 columns'>
 				<div class='panel'>
 					<h4>Andrew Nederlof</h4>
 					<h6>Department of Mechanical Engineering</h6>
+					<div class='push-3'>
+						<img src="Pictures/Andrew.png"/>
+					</div>
 				</div>
 			</div>
-			<div class='large-6 medium-6 columns'>
+			<div class='large-5 medium-5 small-5 columns'>
 				<div class='panel'>
 					<h4>Bill Miller</h4>
 					<h6>Department of Mechanical Engineering</h6>
+					<div class='push-3'>
+						<img src="Pictures/Bill.png"/>
+					</div>
 				</div>
 			</div>
-			<div class='large-6 medium-6 columns'>
+			<div class='large-5 medium-5 small-5 columns'>
 				<div class='panel'>
 					<h4>Alex Arsenault</h4>
 					<h6>Department of Electrical Engineering</h6>
+					<div class='push-3'>
+						<img src="Pictures/Alex.png"/>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -78,10 +88,10 @@
 		<div class='row'>
 			<h3 id="literature">Literature</h3>
 				<div class='row'>
-					<div class='large-6 columns'>
+					<div class='large-6 medium-6 small-6 columns'>
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/ACohrH64YKs" frameborder="0" allowfullscreen></iframe>
 					</div>
-					<div class='large-4 columns'>
+					<div class='large-5 medium-5 small-5 columns'>
 						<div class='panel'>
 							<p>
 								The video on the left is of a ballbot build by a group of undergraduate students at the Swiss Federal Institute of Technology Zurich.  The ballbot uses 3 omniwheels to balance the ballbot in the xz and yz planes, as well as giving the ballbot the ability to rotate about its yaw axis.  Their paper, <i><a href="http://e-collection.library.ethz.ch/eserv/eth:7943/eth-7943-01.pdf"> Modeling and Control of a Ballbot </a></i>, proved to be quite useful in the early stages of our analysis.
@@ -90,38 +100,115 @@
 					</div>
 				</div>
 				<div class='row'>
-					<div class='large-6 columns'>
+					<div class='large-6 medium-6 small-6 columns'>
 						<div class='panel'>
 							<p>
 								The video on the right is a ballbot that was made out of Lego Mindstorms.  Unlike the ballbot above which has the ability to rotate about its yaw axis, the wheels on this ballbot are orientated in such a way that it can only balance in the xz and yz planes, but not rotate about the yaw axis.  We decided to go with a wheel orientation similiar to this.  By removing one degree of freedom from the ballbot, the control system becomes much easier to develop, and do to the limited timeframe of our project we thought that this might be the best approach.
 							</p>
 						</div>
 					</div>
-					<div class='large-4  pull-1 columns'>
+					<div class='large-4 medium-4 small-4 pull-custom-1 columns'>
 						<iframe width="420" height="315" src="https://www.youtube.com/embed/f8jxGsg3p0Y" frameborder="0" allowfullscreen></iframe>
 					</div>
+				</div>
+				<div class='large-12 medium-12 small-12 panel columns'>
+					<p>
+						All of the papers that we read and used information from throughout our project can be found at the bottom of the page in the <a href="#references">References</a> section.  The most informative papers when working on the analysis portion were <i><a href="http://e-collection.library.ethz.ch/eserv/eth:7943/eth-7943-01.pdf"> Modeling and Control of a Ballbot </a></i> and <i><a href="http://data.mecheng.adelaide.edu.au/robotics/projects/2009/Ballbot/Ballbot_Final_Report.pdf"> Design and Build a Ballbot</a></i>.  Both of these papers were very thorough with all of their analyses since they were both undergraduate bachelor theses and this proved to be very helpful in the early stages of determining how to approach modeling the dynamics of the system.  The remaining papers proved to be useful in comparing various dynamic models, as well as for looking at different approaches used for controlling the ballbot. 
+					</p>
 				</div>
 		</div>
 
 		<div class='row'>
 			<h3 id="analysis">Analysis</h3>
-			<div class='large-12 columns panel'>
+			<h5> Lagrangian </h5>
+			<div class='large-12 medium-12 small-12 columns panel'>
 				<p>
 					The dynamic model that we used for our ballbot was almost identical to the planar model developed by the team Rezero team at ETH Zurich.  This involved solving the kinetic and potential energies for the ball, wheels, and robot body and then combining these energies together to solve the Lagranian for the system.
 				</p>
+			</div>
+			<div class='row'>
+				<div class='large-4 medium-4 small-4 columns'>
+					<img src="Analysis/Planar_Model.png" />
+					<p><i>Modeling and Control of a Ballbot (2010)</i></p>
+				</div>
+				<div class='large-8 medium-8 small-8 columns panel'>
+					<o>
+						The diagram on the left shows the breakdown of the planar model that was used in the dynamic analysis for the ballbot.  The robot body is condensed down to a point source at the location of the center of mass of the robot.  We used all of the same assumptions as the Rezero team.  These include a no slip condition between the ball and the ground as well as between the wheels and the ball.  We also assume there is no deformation or friction and that the ball can only move horizontally, the ball does not start hopping off of the ground.  In terms of notation, variables associated with the ball have a subscript <i>"K"</i>, variables associated with the wheel have a subscript <i>"W"</i> and variables associated with the body have a subscript <i>"A"</i>.
+					</p>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='large-4 medium-4 small-4 columns panel'>
+					<div class='push-3'>
+						<img src="Analysis/Energies.png"/>
+					</div>
+					<p>
+						The energies for the Lagrangian were combined from the energies of the ball, wheel, and body.
+					</p>
+				</div>
+				<div class='large-3 medium-3 small-3 push-custom-1 columns panel'>
+					<img src="Analysis/Coordinate_System.png"/>
+					<p>
+						The equations above define the coordinate systems for the yz and xz-planes.
+					</p>
+				</div>
+				<div class='large-4 medium-4 small-4 columns panel'>
+					<img src="Analysis/Lagrangian.png"/>
+					<p>
+						The non-conservative Lagrangian is defined as above.  In our case the only non-potential force that we consider comes from the motors.
+					</p>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='large-4 medium-4 small-4 columns'>
+					<img src="Analysis/Lagrangian_Solution.png"/>
+				</div>
+				<div class='large-8 medium-8 small-8 columns panel'>
+					<p>
+						The solution to the Lagrangian can be found  on the left while the matrices associated with it can be found below.
+					</p>
+				</div>
+				<div class='push-1 columns'>
+					<img src="Analysis/Matrices.png"/>
+				</div>
+			</div>
+			<h5> Simulink </h5>
+			<div class='row'>
+				<div class='large-12 medium-12 small-12 columns panel'>
+					<p>
+						Once we had the solution to the Lagrangian, we then put the model into Simulink so that we could verify that the model made sense.  Once we had the model verified, the first step was to test out various parameters that we had control over and see how this effected the stability of the ballbot.  These parameters included such things as whether a heavier or lighter bowling ball would be better (spoiler alert: a lighter ball is better), as well as if we wanted a higher or lower center of mass.  The model also helped us decide on how much torque and speed we needed to get out of our motors so that we could choose them appropriately.  Once we had some of our parameters chosen, the model let us test out various control methods to test if it was possible for us to tune our system.  The model shown below has a PID control loop implemented that was able to stabalize the model.
+					</p>
+				</div>
+				<div class='push-custom-2 columns'>
+					<img src="Analysis/Simulink_Model.png"/>
+					<p>
+					</p>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='large-12 medium-12 small-12 columns panel'>
+					<p>
+						Below is a sample of a couple of graphs that the Simulink model would output.  On the left is the change in the body angle as the robot responds to a simulated "push" disturbance.  To the right one can see how the torque of the motor needs to respond to counteract the disturbance.  If you look back up at the Simulink block diagram you can see that there are various scopes throughout the model.  Depending on what we might have been investigating at the time we would look at an assortment of traces to help us better understand what was happening and to verify that the behavior made sense.
+					</p>
+				</div>
+				<div class='large-6 medium-6 small-6 columns'>
+					<img src="Analysis/Body_Angle_Output.png"/>
+				</div>
+				<div class='large-6 medium-6 small-6 push-custom-1 columns'>
+					<img src="Analysis/Motor_Torque_Output.png"/>
+				</div>
 			</div>
 		</div>
 
 		<div class='row'>
 			<h3 id="design">Design</h3>
-
-			<h4> Engineering Drawings </h4>
+			<h5> Engineering Drawings </h5>
 <!---                                  Slider for CAD images                                 -->
 			<div class='row push-2'>
 				<div class="slideshow-wrapper">
 					<div class="slide-viewer">
 						<div class="slide-group">
-							<ul>
+						<ul>
 							<li class="slide slide 1"><img src="Drawings/3_8th_in_Bearing.png" /></li>
 							<li class="slide slide-2"><img src="Drawings/8-32_1in_SHCS.png" /></li>
 							<li class="slide slide-3"><img src="Drawings/1_half_in_Bearing.png" /></li>
@@ -135,9 +222,9 @@
 <!---                               End Slider for CAD images                                -->
 		</div>
 
-		<div class='row'>
+		<div class='row hide'>
 			<h3 id="manufacturing">Control System</h3>
-			<div class='large-12 columns panel'>
+			<div class='large-12 medium-12 small-12 columns panel'>
 				<p>
 				</p>
 			</div>
@@ -149,21 +236,22 @@
 					<a href="https://www.ri.cmu.edu/pub_files/pub4/lauwers_tom_2006_1/lauwers_tom_2006_1.pdf"> A Dynamically Stable Single-Wheeled Mobile Robot with Inverse Mouse-Ball Drive </a></br>			
 					<a href="http://e-collection.library.ethz.ch/eserv/eth:7943/eth-7943-01.pdf"> Modeling and Control of a Ballbot </a></br>
 					<a href="http://data.mecheng.adelaide.edu.au/robotics/projects/2009/Ballbot/Ballbot_Final_Report.pdf">Design and Build a Ballbot</a></br>
+					<a href="http://clarinet.msl.ri.cmu.edu/publications/pdfs/ballbotIJRR_final.pdf"> The Ballbot: An Omnidirectional Balancing Mobile Robot </a></br>
 				</P>
 		</div>
 
 	</div>
 	<div class='row footer'>
-		<div class='large-6 medium-6 columns'>
-			I.P.O.W.R.</br>
-			<div class='small-push-1'>
-				Bryan Ptucha</br>
-				Andrew Nederlof</br>
-				Bill Miller</br>
-				Alex Arsenault</br>
-			</div>
+		<div class='column large-4 medium-4 small-4 push-1'>
+			<img src="IPOWR_Logo_4_Footer.png" />
 		</div>
-		<div class='large-4 medium-4 columns'>
+		<div class='columns large-4 medium-4 small-4 pull-2'>
+			Bryan Ptucha</br>
+			Andrew Nederlof</br>
+			Bill Miller</br>
+			Alex Arsenault</br>
+		</div>
+		<div class='large-4 medium-4 small-4 columns'>
 			<ul>
 				<li><a href="#header">Home</a></li>
 				<li><a href="#about">About</a></li>
@@ -171,7 +259,7 @@
 				<li><a href="#literature">Literature</a></li>
 				<li><a href="#analysis">Analysis</a></li>
 				<li><a href="#design">Design</a></li>
-				<li><a href="#manufacturing">Control System</a></li>
+				<li class='hide'><a href="#manufacturing">Control System</a></li>
 				<li><a href="#references">References</a></li>
 			</ul>
 		</div>

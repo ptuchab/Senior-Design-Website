@@ -9,7 +9,25 @@ body {
 #header {
 	top: 0px;
 	height: 700px;
-	background-image: url("ipowr4_motor_view.png");
+	background-image: url("Background.png");
+}
+
+.pull-custom-1 {
+  position: relative;
+  right: 10.5%;
+  left: auto; 
+}
+
+.push-custom-1 {
+	position: relative;
+	left: 4.5%;
+	right: auto; 
+}
+
+.push-custom-2 {
+	position: relative;
+	left: 12%;
+	right: auto;
 }
 
 /*
