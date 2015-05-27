@@ -31,7 +31,8 @@
 				<li><a href="#literature">Literature</a></li>
 				<li><a href="#analysis">Analysis</a></li>
 				<li><a href="#design">Design</a></li>
-				<li class='hide'><a href="#manufacturing">Control System</a></li>
+				<li><a href="#manufacturing">Control System</a></li>
+				<li><a href="#gallery">Gallery</a></li>
 				<li><a href="#references">References</a></li>
 			</ul>
 		</div>
@@ -209,25 +210,58 @@
 					<div class="slide-viewer">
 						<div class="slide-group">
 						<ul>
-							<li class="slide slide 1"><img src="Drawings/3_8th_in_Bearing.png" /></li>
-							<li class="slide slide-2"><img src="Drawings/8-32_1in_SHCS.png" /></li>
-							<li class="slide slide-3"><img src="Drawings/1_half_in_Bearing.png" /></li>
-							<li class="slide slide-4"><img src="Drawings/Omniwheel_Assembly.png" /></li>
+							<li class="slide slide-1"><img src="Drawings/IPOWR_Assembly.jpg" width="650"/></li>
+							<li class="slide slide-2"><img src="Drawings/Arrow-Head-Base.jpg" width="650"/></li>
+							<li class="slide slide-3"><img src="Drawings/Middle_Plate.jpg" width="650"/></li>
+							<li class="slide slide-4"><img src="Drawings/Top_Plate.jpg" width="650"/></li>
+							<li class="slide slide-5"><img src="Drawings/Axle_Bracket.jpg" width="650"/></li>
+							<li class="slide slide-6"><img src="Drawings/Motor_Axle_Bracket.jpg" width="650"/></li>
+							<li class="slide slide-7"><img src="Drawings/Axle.jpg" width="650"/></li>
+							<li class="slide slide-8"><img src="Drawings/Nylon_Insert.jpg" width="650"/></li>
+							<li class="slide slide-9"><img src="Drawings/1_Inch_Hollow_Bar.jpg" width="650"/></li>
+							<li class="slide slide-10"><img src="Drawings/Rear_Motor_Tensioner.jpg" width="650"/></li>
+							<li class="slide slide-11"><img src="Drawings/Omniwheel_Assembly.jpg" width="650"/></li>
+							<li class="slide slide-12"><img src="Drawings/Omniwheel_Hex_Hub.jpg" width="650"/></li>
 						</ul>
 						</div>
 					</div>
-					<div class="button-group"><div class="round"></div></div>
+					<div class="button-group"><div></div></div>
 				</div>
 			</div>
 <!---                               End Slider for CAD images                                -->
 		</div>
 
-		<div class='row hide'>
+		<div class='row'>
 			<h3 id="manufacturing">Control System</h3>
-			<div class='large-12 medium-12 small-12 columns panel'>
-				<p>
-				</p>
+			<div class="row">
+				<div class="large-4 medium-4 small-4 columns">
+					<img src="Pictures/SparkFun_IMU.jpg" width="300px"/>
+					<p>Sparkfun Electronics</p>
+				</div>
+				<div class='large-8 medium-8 small-8 columns panel'>
+					<h5>9 Degrees of Freedom - Razor IMU</h5>
+					<p>
+						For the feedback in our control system, we used a <a href="https://www.sparkfun.com/products/10736">9 degree of freedom IMU from spakfun electronics</a>, shown on the left.  This unit includes a 3 axis accelerometer, 3 axis gyroscope, and a 3 axis magnetometer.  The gyroscope was the most important feedback for the balancing of the ballbot.  The IMU includes a processing chip on board that can be programmed using the Arduino IDE.  We used an <a href="https://github.com/ptrbrtz/razor-9dof-ahrs/wiki/Tutorial">open source library</a> referenced on the Sparkfun website for processing the measured accelerometer, gyroscope and magnetometer readings to give us yaw, pitch, and roll angles after processing.  The pitch and roll readings were then used as our feedback for our PID controller.
+					</p>
+				</div>
 			</div>
+			<div class="row">
+				<div class='large-8 medium-8 small-8 columns panel'>
+					<h5>Ardunio Uno</h5>
+					<p>
+						An <a href="http://www.arduino.cc/en/Main/ArduinoBoardUno">Arduino Uno</a> was used as the controller for the ballbot.  The pitch and roll from the IMU are fed into a PID control system which is used for balancing the ballbot.  We use the <a href="http://playground.arduino.cc/Code/PIDLibrary">Arduino PID Library</a> as the starting point for our controller.  We use two PID loops for control, one loop has the pitch as the feedback while the other has the roll as the feedback.  We then take the output of both of these control loops and make a vector from the two scalars, which is the direction we need to drive the ballbot in to correct for its current position.  This vector is broken down into the signal needed for each of the 3 individual motors needed to drive the ballbot in the correct direction.
+					</p>
+				</div>
+				<div class="large-4 medium-4 small-4 columns">
+					<img src="Pictures/ArduinoUno.jpg" width="300px"/>
+					<p>Arduino</p>
+				</div>
+			</div>
+		</div>
+
+		<div class='row'>
+			<h3 id="gallery">Gallery</h3>
+			
 		</div>
 
 		<div class='row'>
@@ -259,7 +293,8 @@
 				<li><a href="#literature">Literature</a></li>
 				<li><a href="#analysis">Analysis</a></li>
 				<li><a href="#design">Design</a></li>
-				<li class='hide'><a href="#manufacturing">Control System</a></li>
+				<li><a href="#manufacturing">Control System</a></li>
+				<li><a href="#gallery">Gallery</a></li>
 				<li><a href="#references">References</a></li>
 			</ul>
 		</div>
